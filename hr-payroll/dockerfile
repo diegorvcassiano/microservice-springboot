@@ -1,0 +1,9 @@
+FROM openjdk:11
+VOLUME /tmp
+ADD ./target/hr-payroll-1.0.0.jar hr-payroll.jar
+ENTRYPOINT ["java","-jar","/hr-payroll.jar"]
+
+# To build the image execute: 
+# docker build -t hr-payroll:v1 .
+# To run a container execute: 
+# docker run -P --network hr-net hr-payroll:v1

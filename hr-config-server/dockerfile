@@ -1,0 +1,10 @@
+FROM openjdk:11
+VOLUME /tmp
+EXPOSE 8888
+ADD ./target/hr-config-server--1.0.0.jar hr-config-server.jar
+ENTRYPOINT ["java","-jar","/hr-config-server.jar"]
+
+# To build the image execute: 
+# docker build -t hr-config-server:v1 .
+# To run a container execute: 
+# docker run -p 8888:8888 --name hr-config-server --network hr-net -e GITHUB_USER=<YOUR_GITHUB_USER> -e GITHUB_PASS=<YOUR_GIT_HUB_PASS> hr-config-server:v1  

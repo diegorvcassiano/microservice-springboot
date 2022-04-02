@@ -1,0 +1,9 @@
+FROM openjdk:11
+VOLUME /tmp
+ADD ./target/hr-user-1.0.0.jar hr-user.jar
+ENTRYPOINT ["java","-jar","/hr-user.jar"]
+
+# To build the image execute: 
+# docker build -t hr-user:v1 .
+# To run a container execute: 
+# docker run -P --network hr-net hr-user:v1
